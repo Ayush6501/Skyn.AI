@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "skyn"
+version = "0.0.1"
+description = "An application which utilizes computer vision algorithms to infer skin metrics from a user's selfie and recommend customized skincare and cosmetic items. Skin Tone, Skin Type, and Acne Concern Level were extracted using image processing and CNN models. Products with a strong cosine similarity were ranked according to relevance using these data points. In React-Flask, the web application was written."
+authors = [
+  { name = "AM/RK" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "~=3.10"
+
+[tool.black]
+line-length = 99
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+
+[tool.ruff.lint.isort]
+known_first_party = ["skyn"]
+force_sort_within_sections = true
